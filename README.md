@@ -1,8 +1,6 @@
 # Rack::XRobotsTag
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rack/x_robots_tag`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a small Rack middleware that will add the [`X-Robots-Tag`](https://developers.google.com/search/reference/robots_meta_tag) header to your responses. This indicates to crawlers that your site should not be indexed and is useful for staging and testing sites.
 
 ## Installation
 
@@ -22,7 +20,9 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+In your `config.ru` simply use the middleware based upon whatever constraints you may have. For example, if your staging environment has an environment variable called `DISABLE_ROBOTS` here is how you might mount it.
+
+    use Rack::XRobotsTag if ENV['DISABLE_ROBOTS']
 
 ## Development
 
