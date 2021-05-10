@@ -1,6 +1,6 @@
 module Rack
   class XRobotsTag
-    VERSION = '1.1.0'
+    VERSION = '1.2.0'
 
     def initialize(app)
       @app = app
